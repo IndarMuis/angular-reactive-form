@@ -1,0 +1,64 @@
+<div class="container">
+    <button mat-flat-button color="primary" (click)="showForm()">ADD CARD <mat-icon>plus_one</mat-icon></button>
+    
+    <hr>
+
+    
+    <div class="form-container" *ngIf="isShowFormTable && isHideFormTable == false">
+
+      <form [formGroup]="profileForm" (submit)="submitForm()">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>ADD NEW CARD</mat-card-title>
+          </mat-card-header>
+          <hr>
+          <mat-card-content>
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                  <input formControlName="name" matInput placeholder="Name">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                  <input formControlName="age" matInput placeholder="Age">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                  <input formControlName="address" matInput placeholder="Address">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                  <input formControlName="company" matInput placeholder="company">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                  <input formControlName="phone" matInput placeholder="Phone">
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <button  mat-raised-button color="primary">Submit</button>
+            <button  mat-raised-button color="warn" (click)="hideForm()">Cancel</button>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+
+    </div>
+   
+
+    
+</div>
+  

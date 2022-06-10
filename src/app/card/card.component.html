@@ -1,0 +1,18 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>Name : {{ dataCard.Name }}</mat-card-title>
+        <mat-card-subtitle>Age {{ dataCard.Age }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]=" dataCard.ImagePath " [alt]=" dataCard.Name ">
+    <mat-card-content>
+        <p> <strong>Company Name:</strong> {{ dataCard.Company }}</p>
+        <p><strong>Address:</strong> {{ dataCard.Address }}</p>
+        <p><strong>Phone: </strong> {{ dataCard.Phone }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-mini-fab color="accent" (click)="countLike()">
+            <mat-icon>favorite</mat-icon>
+        </button>
+        <strong> {{ dataCard.TotalLike }} LIKES</strong>
+    </mat-card-actions>
+</mat-card>
