@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DataCard } from '../card/card-data.interface';
 
 @Component({
@@ -20,11 +20,11 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
     this.profileForm = new FormGroup({
-      age : new FormControl(''),
-      name : new FormControl(''),
-      address : new FormControl(''),
-      company : new FormControl(''),
-      phone : new FormControl(''),
+      age : new FormControl('', [Validators.required, Validators.pattern("^[0-9]*$")],),
+      name : new FormControl('', Validators.required),
+      address : new FormControl('', Validators.required),
+      company : new FormControl('', Validators.required),
+      phone : new FormControl('', [Validators.required, Validators.pattern("^[0-9]*$")]),
     });
   }
 
